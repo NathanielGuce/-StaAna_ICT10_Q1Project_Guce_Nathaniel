@@ -6,12 +6,12 @@
     <title>1st Quarter Project | SKU Generator</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css"/>
     <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
 
     <style>
         body {
-            background: linear-gradient(135deg, #f6f4c9 0%, #e6f188 100%);
+            background: linear-gradient(135deg, #f6f4c9 0%, #dcca02 100%);
             min-height: 100vh;
             font-family: 'Segoe UI', system-ui, sans-serif;
         }
@@ -22,8 +22,8 @@
         }
         .app-card .card-header {
             border-radius: 1rem 1rem 0 0;
-            background: linear-gradient(90deg, #e3f297, #e9e171);
-            color: #fff;
+            background: linear-gradient(90deg, #fff836, #f1eb96);
+            color: #000000;
             padding: 1.5rem;
         }
         .form-label {
@@ -38,7 +38,7 @@
         }
         .btn-generate:hover {
             opacity: 0.9;
-            color: #ffe100d2;
+            color: #000000d2;
         }
         #sku_output {
             min-height: 3rem;
@@ -53,7 +53,7 @@
             font-family: 'Courier New', monospace;
             font-weight: 700;
             font-size: 1.3rem;
-            color: #d6f7a4;
+            color: #010200;
             letter-spacing: 1px;
         }   
         py-terminal {
@@ -62,7 +62,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #e3e8b1;">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #857a03;">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">Skewer</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -98,10 +98,10 @@
                                     <i class="fa-solid fa-tags me-1"></i> Category
                                 </label>
                                 <select id="category" class="form-select">
-                                    <option value="Perishables">Perishables</option>
-                                    <option value="Beverages">Beverages</option>
-                                    <option value="Disposables">Disposables</option>
-                                    <option value="Packaging">Packaging</option>
+                                    <option value="Coffee">Coffee</option>
+                                    <option value="Matcha">Matcha</option>
+                                    <option value="Tea">Tea</option>
+                                    <option value="Smoothie">Smoothie</option>
                                 </select>
                             </div>
 
@@ -109,7 +109,7 @@
                                 <label for="product_name" class="form-label">
                                     <i class="fa-solid fa-box me-1"></i> Product Name
                                 </label>
-                                <input type="text" id="product_name" class="form-control" placeholder="e.g. Bottled Water">
+                                <input type="text" id="product_name" class="form-control" placeholder="e.g. Americano">
                             </div>
 
                             <div class="mb-4">
@@ -120,8 +120,7 @@
                             </div>
 
                             <div class="d-grid">
-                                <input type="button" py-click="SKU_generator" value="Generate SKU"
-                                       class="btn btn-generate btn-lg text-white">
+                                <input type="button" py-click="SKU_generator" value="Generate SKU"class="btn btn-generate btn-lg text-dark fw-bold">
                             </div>
                         </form>
 
@@ -136,7 +135,7 @@
             </div>
         </div>
     </div>
-    <footer class="text-center text-light py-4" style="background-color: #e6f9ca;">
+    <footer class="text-center text-light py-4" style="background-color: #ceb708;">
         <div class="container">
             <p class="mb-1">
                 <i class="fa-solid fa-code me-1"></i>
