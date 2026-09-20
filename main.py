@@ -11,14 +11,33 @@ def SKU_generator(e):
     display("SKU: " + sku, target=('sku_output'))
 
 def create_order(e):
-    '''displays the order summary based on the items selected'''
-    document.getElementById("show").innerHTML = " "
-    item1 = document.getElementById("item1").value
-    item2 = document.getElementById("item2").value
-    item3 = document.getElementById("item3").value
-    item4 = document.getElementById("item4").value
-    item5 = document.getElementById("item5").value
-    
+    document.getElementById("show").innerHTML = ""
 
-    order_summary = item1 + "\n" + item2 + "\n" + item3 + "\n" + item4 + "\n" + item5
-    display("Your order includes:\n" + order_summary, target=('show'))
+    items = [
+        ("Shirts","item1"),
+        ("Pants","item2"),
+        ("Heavy-Duty Shades","item3"),
+        ("Jacket","item4"),
+        ("Shorts","item5")
+    ]
+
+    order = []
+    total = 0
+
+    for name, item_id in items:
+        item = document.getElementById(item_id)
+
+        if item.checked:
+            price = int(item.value)
+            order.append(name + " - ₱" + str(price))
+            total += price
+
+    if len(order) == 0:
+        display("select at least one item.", target="show")
+    else:
+        display("Your order includes:", target="show")
+
+        for item in order:
+            display(item, target="show")
+
+        display("Total: ₱" + str(total), target="show")
