@@ -18,7 +18,7 @@ def create_order(e):
     item3 = document.getElementById("item3").value
     item4 = document.getElementById("item4").value
     item5 = document.getElementById("item5").value
+    
 
-    order_summary = f"Order Summary: \nItem 1: {item1}\nItem 2: {item2}\nItem 3: {item3}\nItem 4: {item4}\nItem 5: {item5}"
-
-    display(order_summary, target=('show'))
+    order_summary = item1 + "\n" + item2 + "\n" + item3 + "\n" + item4 + "\n" + item5
+    display("Your order includes:\n" + order_summary, target=('show'))
